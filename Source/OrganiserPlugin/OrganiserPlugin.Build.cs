@@ -42,6 +42,7 @@ public class OrganiserPlugin : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"EditorScriptingUtilities"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

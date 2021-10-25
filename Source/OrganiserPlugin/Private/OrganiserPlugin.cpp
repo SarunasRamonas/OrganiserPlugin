@@ -8,6 +8,7 @@
 #include "Widgets/Layout/SBox.h"
 #include "Widgets/Text/STextBlock.h"
 #include "ToolMenus.h"
+#include "OrganiserPluginUtilities.h"
 
 static const FName OrganiserPluginTabName("OrganiserPlugin");
 
@@ -76,7 +77,8 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 
 void FOrganiserPluginModule::PluginButtonClicked()
 {
-	FGlobalTabmanager::Get()->TryInvokeTab(OrganiserPluginTabName);
+	UOrganiserPluginUtilities::RemoveAllAssetsRefFree();
+	//FGlobalTabmanager::Get()->TryInvokeTab(OrganiserPluginTabName);
 }
 
 void FOrganiserPluginModule::RegisterMenus()
