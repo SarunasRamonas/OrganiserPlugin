@@ -1,0 +1,12 @@
+C:\Repositories\Personal\Portfolio\ToolAssetCleaner\OrganiserTool\Plugins\OrganiserPlugin\Intermediate\Build\Win64\UE4Editor\Development\OrganiserPlugin\Definitions.OrganiserPlugin.h
+C:/Repositories/Personal/Portfolio/ToolAssetCleaner/OrganiserTool/Plugins/OrganiserPlugin/Intermediate/Build/Win64/UE4Editor/Inc/OrganiserPlugin/OrganiserPlugin.init.gen.cpp
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:/Repositories/Personal/Portfolio/ToolAssetCleaner/OrganiserTool/Plugins/OrganiserPlugin/Intermediate/Build/Win64/UE4Editor/Inc/OrganiserPlugin/OrganiserPluginUtilities.gen.cpp
+C:\Repositories\Personal\Portfolio\ToolAssetCleaner\OrganiserTool\Plugins\OrganiserPlugin\Source\OrganiserPlugin/Public/OrganiserPluginUtilities.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
+C:\Repositories\Personal\Portfolio\ToolAssetCleaner\OrganiserTool\Plugins\OrganiserPlugin\Intermediate\Build\Win64\UE4Editor\Inc\OrganiserPlugin\OrganiserPluginUtilities.generated.h
