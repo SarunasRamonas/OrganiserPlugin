@@ -61,6 +61,11 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 		FText::FromString(TEXT("OrganiserPlugin.cpp"))
 		);
 
+	const FMargin ButtonPadding = FMargin(10.f);
+	FSlateFontInfo ButtonTextStyle = FCoreStyle::Get().GetFontStyle("EmbossedText");
+	ButtonTextStyle.Size = 14.f;
+
+
 	return SNew(SDockTab)
 		.TabRole(ETabRole::NomadTab)
 		[
@@ -68,17 +73,41 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 			SNew(SBox)
 			.HAlign(HAlign_Center)
 			.VAlign(VAlign_Center)
+			
 			[
-				SNew(STextBlock)
-				.Text(WidgetText)
+				SNew(SVerticalBox)
+
+				+ SVerticalBox::Slot()
+					.Padding(FMargin(20.0f, 20.0f, 20.0f, 20.0f))
+					.VAlign(VAlign_Center)
+					.AutoHeight()
+					[
+						SNew(SButton)
+						.OnClicked_Raw(this, &FOrganiserPluginModule::OnCleanupButtonClicked)
+					[
+						SNew(STextBlock)
+						.Font(ButtonTextStyle)
+						.Text(FText::FromString("Cleanup"))
+						.Justification(ETextJustify::Center)
+					]
+					]
+
 			]
+				
 		];
+}
+
+
+FReply FOrganiserPluginModule::OnCleanupButtonClicked()
+{
+	UOrganiserPluginUtilities::RemoveAllAssetsRefFree();
+	return FReply::Handled();
 }
 
 void FOrganiserPluginModule::PluginButtonClicked()
 {
-	UOrganiserPluginUtilities::RemoveAllAssetsRefFree();
-	//FGlobalTabmanager::Get()->TryInvokeTab(OrganiserPluginTabName);
+	
+	FGlobalTabmanager::Get()->TryInvokeTab(OrganiserPluginTabName);
 }
 
 void FOrganiserPluginModule::RegisterMenus()
