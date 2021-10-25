@@ -1,0 +1,10 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.OrganiserPlugin.cpp.obj": [
+			"OrganiserPlugin.cpp.obj",
+			"OrganiserPluginCommands.cpp.obj",
+			"OrganiserPluginStyle.cpp.obj"
+		]
+	}
+}
