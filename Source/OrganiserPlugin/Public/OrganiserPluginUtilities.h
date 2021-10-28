@@ -18,7 +18,24 @@ public:
 
 	UOrganiserPluginUtilities();
 
+	/*
+	 * Removes all assets in content browser, which has no references.
+	 * @note:
+	 */
 	UFUNCTION()
 	static void RemoveAllAssetsRefFree();
 
+	UFUNCTION()
+	static void RemoveAllEmptyFolders();
+
+	UFUNCTION()
+	static void UnifyAssetsDuplicates();
+
+	UFUNCTION()
+	static void MakeOrganizationDir();
+
+
+private:
+
+	static bool CreateDirectory(FString DirectoryPath);
 };

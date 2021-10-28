@@ -76,7 +76,6 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 			
 			[
 				SNew(SVerticalBox)
-
 				+ SVerticalBox::Slot()
 					.Padding(FMargin(20.0f, 20.0f, 20.0f, 20.0f))
 					.VAlign(VAlign_Center)
@@ -100,7 +99,9 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 
 FReply FOrganiserPluginModule::OnCleanupButtonClicked()
 {
-	UOrganiserPluginUtilities::RemoveAllAssetsRefFree();
+	//UOrganiserPluginUtilities::RemoveAllAssetsRefFree();
+	//UOrganiserPluginUtilities::UnifyAssetsDuplicates();
+	UOrganiserPluginUtilities::MakeOrganizationDir();
 	return FReply::Handled();
 }
 

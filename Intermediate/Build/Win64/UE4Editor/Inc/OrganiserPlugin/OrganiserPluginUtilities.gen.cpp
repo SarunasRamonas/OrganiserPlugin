@@ -18,6 +18,27 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 	UPackage* Z_Construct_UPackage__Script_OrganiserPlugin();
 // End Cross Module References
+	DEFINE_FUNCTION(UOrganiserPluginUtilities::execMakeOrganizationDir)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		UOrganiserPluginUtilities::MakeOrganizationDir();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UOrganiserPluginUtilities::execUnifyAssetsDuplicates)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		UOrganiserPluginUtilities::UnifyAssetsDuplicates();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UOrganiserPluginUtilities::execRemoveAllEmptyFolders)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		UOrganiserPluginUtilities::RemoveAllEmptyFolders();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UOrganiserPluginUtilities::execRemoveAllAssetsRefFree)
 	{
 		P_FINISH;
@@ -29,9 +50,34 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 	{
 		UClass* Class = UOrganiserPluginUtilities::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "MakeOrganizationDir", &UOrganiserPluginUtilities::execMakeOrganizationDir },
 			{ "RemoveAllAssetsRefFree", &UOrganiserPluginUtilities::execRemoveAllAssetsRefFree },
+			{ "RemoveAllEmptyFolders", &UOrganiserPluginUtilities::execRemoveAllEmptyFolders },
+			{ "UnifyAssetsDuplicates", &UOrganiserPluginUtilities::execUnifyAssetsDuplicates },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/OrganiserPluginUtilities.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UOrganiserPluginUtilities, nullptr, "MakeOrganizationDir", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree_Statics
 	{
@@ -42,7 +88,9 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "/*\n\x09 * Removes all assets in content browser, which has no references.\n\x09 * @note:\n\x09 */" },
 		{ "ModuleRelativePath", "Public/OrganiserPluginUtilities.h" },
+		{ "ToolTip", "* Removes all assets in content browser, which has no references.\n* @note:" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UOrganiserPluginUtilities, nullptr, "RemoveAllAssetsRefFree", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree_Statics::Function_MetaDataParams)) };
@@ -52,6 +100,50 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/OrganiserPluginUtilities.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UOrganiserPluginUtilities, nullptr, "RemoveAllEmptyFolders", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/OrganiserPluginUtilities.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UOrganiserPluginUtilities, nullptr, "UnifyAssetsDuplicates", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -74,7 +166,10 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_OrganiserPlugin,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UOrganiserPluginUtilities_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree, "RemoveAllAssetsRefFree" }, // 2430176729
+		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir, "MakeOrganizationDir" }, // 71774562
+		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree, "RemoveAllAssetsRefFree" }, // 3722311773
+		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders, "RemoveAllEmptyFolders" }, // 3529754464
+		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_UnifyAssetsDuplicates, "UnifyAssetsDuplicates" }, // 335341976
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UOrganiserPluginUtilities_Statics::Class_MetaDataParams[] = {
@@ -110,7 +205,7 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UOrganiserPluginUtilities, 2136147558);
+	IMPLEMENT_CLASS(UOrganiserPluginUtilities, 4202156240);
 	template<> ORGANISERPLUGIN_API UClass* StaticClass<UOrganiserPluginUtilities>()
 	{
 		return UOrganiserPluginUtilities::StaticClass();

@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPlugin_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000040,
-				0x7B73FE98,
+				0xF6C58094,
 				0x7C958BEB,
 				METADATA_PARAMS(nullptr, 0)
 			};
