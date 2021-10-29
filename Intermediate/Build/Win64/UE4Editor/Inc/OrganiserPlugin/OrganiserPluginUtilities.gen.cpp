@@ -18,6 +18,14 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 	UPackage* Z_Construct_UPackage__Script_OrganiserPlugin();
 // End Cross Module References
+	DEFINE_FUNCTION(UOrganiserPluginUtilities::execCreateContenctTopLevelStructure)
+	{
+		P_GET_TARRAY(FString,Z_Param_FolderNames);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=UOrganiserPluginUtilities::CreateContenctTopLevelStructure(Z_Param_FolderNames);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UOrganiserPluginUtilities::execMakeOrganizationDir)
 	{
 		P_FINISH;
@@ -50,12 +58,57 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 	{
 		UClass* Class = UOrganiserPluginUtilities::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "CreateContenctTopLevelStructure", &UOrganiserPluginUtilities::execCreateContenctTopLevelStructure },
 			{ "MakeOrganizationDir", &UOrganiserPluginUtilities::execMakeOrganizationDir },
 			{ "RemoveAllAssetsRefFree", &UOrganiserPluginUtilities::execRemoveAllAssetsRefFree },
 			{ "RemoveAllEmptyFolders", &UOrganiserPluginUtilities::execRemoveAllEmptyFolders },
 			{ "UnifyAssetsDuplicates", &UOrganiserPluginUtilities::execUnifyAssetsDuplicates },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics
+	{
+		struct OrganiserPluginUtilities_eventCreateContenctTopLevelStructure_Parms
+		{
+			TArray<FString> FolderNames;
+			bool ReturnValue;
+		};
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_FolderNames_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_FolderNames;
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_FolderNames_Inner = { "FolderNames", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_FolderNames = { "FolderNames", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(OrganiserPluginUtilities_eventCreateContenctTopLevelStructure_Parms, FolderNames), EArrayPropertyFlags::None, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((OrganiserPluginUtilities_eventCreateContenctTopLevelStructure_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(OrganiserPluginUtilities_eventCreateContenctTopLevelStructure_Parms), &Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_FolderNames_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_FolderNames,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/OrganiserPluginUtilities.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UOrganiserPluginUtilities, nullptr, "CreateContenctTopLevelStructure", nullptr, nullptr, sizeof(OrganiserPluginUtilities_eventCreateContenctTopLevelStructure_Parms), Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir_Statics
 	{
@@ -166,6 +219,7 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_OrganiserPlugin,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UOrganiserPluginUtilities_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_CreateContenctTopLevelStructure, "CreateContenctTopLevelStructure" }, // 1584180434
 		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_MakeOrganizationDir, "MakeOrganizationDir" }, // 71774562
 		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllAssetsRefFree, "RemoveAllAssetsRefFree" }, // 3722311773
 		{ &Z_Construct_UFunction_UOrganiserPluginUtilities_RemoveAllEmptyFolders, "RemoveAllEmptyFolders" }, // 3529754464
@@ -205,7 +259,7 @@ void EmptyLinkFunctionForGeneratedCodeOrganiserPluginUtilities() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UOrganiserPluginUtilities, 4202156240);
+	IMPLEMENT_CLASS(UOrganiserPluginUtilities, 3054047477);
 	template<> ORGANISERPLUGIN_API UClass* StaticClass<UOrganiserPluginUtilities>()
 	{
 		return UOrganiserPluginUtilities::StaticClass();

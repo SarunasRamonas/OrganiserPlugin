@@ -34,8 +34,18 @@ public:
 	UFUNCTION()
 	static void MakeOrganizationDir();
 
+	/*
+	* Creates Top Level Folders Structure
+	*/
+	UFUNCTION()
+	static bool CreateContenctTopLevelStructure(TArray<FString> FolderNames);
 
 private:
 
+	FORCEINLINE static const FString GetDirectory() { return FString("/Game/"); };
+
 	static bool CreateDirectory(FString DirectoryPath);
+
+	static bool FixUpAllRedirectors();
+
 };

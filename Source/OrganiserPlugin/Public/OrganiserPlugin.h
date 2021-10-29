@@ -20,6 +20,7 @@ public:
 	void PluginButtonClicked();
 
 	FReply OnCleanupButtonClicked();
+	FReply OnCreateFolderStructureClicked();
 	
 private:
 
