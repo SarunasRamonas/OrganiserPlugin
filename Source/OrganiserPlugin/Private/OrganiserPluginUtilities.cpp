@@ -3,17 +3,15 @@
 
 #include "OrganiserPluginUtilities.h"
 #include "EditorAssetLibrary.h"
+#include "AssetToolsModule.h"
 
 UOrganiserPluginUtilities::UOrganiserPluginUtilities()
 {
-
 }
 
 void UOrganiserPluginUtilities::RemoveAllAssetsRefFree()
 {
-	const FString dirPath = "/Game/";
-	TArray<FString> allAssets = UEditorAssetLibrary::ListAssets(dirPath, true, false);
-
+	TArray<FString> allAssets = UEditorAssetLibrary::ListAssets(GetDirectory(), true, false);
 	for (int i = 0; i < allAssets.Num(); i++)
 	{
 		TArray<FString> assetRefs = UEditorAssetLibrary::FindPackageReferencersForAsset(allAssets[i], false);
@@ -88,6 +86,7 @@ void UOrganiserPluginUtilities::MakeOrganizationDir()
 	CreateDirectory(dirPath + "Art");
 }
 
+
 bool UOrganiserPluginUtilities::CreateDirectory(FString DirectoryPath)
 {
 	if (UEditorAssetLibrary::CheckoutDirectory(DirectoryPath))
@@ -98,4 +97,28 @@ bool UOrganiserPluginUtilities::CreateDirectory(FString DirectoryPath)
 	{
 		return false;
 	}	
+}
+
+bool UOrganiserPluginUtilities::FixUpAllRedirectors()
+{
+	const TArray<UObjectRedirector*>AllFoundRedirectors;
+	if (AllFoundRedirectors.Num() != 0)
+	{
+		FAssetToolsModule& AssetToolModule = FModuleManager::LoadModuleChecked<FAssetToolsModule>(TEXT("AssetTools"));
+		AssetToolModule.Get().FixupReferencers(AllFoundRedirectors);
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool UOrganiserPluginUtilities::CreateContenctTopLevelStructure(TArray<FString> FolderNames)
+{
+	for (int i = 0; i < FolderNames.Num(); i++)
+	{
+		CreateDirectory(FString(GetDirectory() + FolderNames[i]));
+	}
+	return true;
 }

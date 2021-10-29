@@ -16,6 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define OrganiserTool_Plugins_OrganiserPlugin_Source_OrganiserPlugin_Public_OrganiserPluginUtilities_h_15_SPARSE_DATA
 #define OrganiserTool_Plugins_OrganiserPlugin_Source_OrganiserPlugin_Public_OrganiserPluginUtilities_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execCreateContenctTopLevelStructure); \
 	DECLARE_FUNCTION(execMakeOrganizationDir); \
 	DECLARE_FUNCTION(execUnifyAssetsDuplicates); \
 	DECLARE_FUNCTION(execRemoveAllEmptyFolders); \
@@ -24,6 +25,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define OrganiserTool_Plugins_OrganiserPlugin_Source_OrganiserPlugin_Public_OrganiserPluginUtilities_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execCreateContenctTopLevelStructure); \
 	DECLARE_FUNCTION(execMakeOrganizationDir); \
 	DECLARE_FUNCTION(execUnifyAssetsDuplicates); \
 	DECLARE_FUNCTION(execRemoveAllEmptyFolders); \

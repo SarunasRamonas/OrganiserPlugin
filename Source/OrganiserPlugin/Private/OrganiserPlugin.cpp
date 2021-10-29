@@ -76,6 +76,30 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 			
 			[
 				SNew(SVerticalBox)
+
+				/*
+				 * ------- Create Folder Structure button with text -------
+				 */
+				+ SVerticalBox::Slot()
+					.Padding(FMargin(20.0f, 20.0f, 20.0f, 20.0f))
+					.VAlign(VAlign_Center)
+					.AutoHeight()
+					[
+						SNew(SButton)
+						.OnClicked_Raw(this, &FOrganiserPluginModule::OnCreateFolderStructureClicked)
+					[
+						SNew(STextBlock)
+						.Font(ButtonTextStyle)
+					.Text(FText::FromString("Create Top Level Folder Structure"))
+					.Justification(ETextJustify::Center)
+					]
+					]
+
+
+
+				/*
+				 * ------- Fix button with text -------
+				 */
 				+ SVerticalBox::Slot()
 					.Padding(FMargin(20.0f, 20.0f, 20.0f, 20.0f))
 					.VAlign(VAlign_Center)
@@ -86,10 +110,11 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 					[
 						SNew(STextBlock)
 						.Font(ButtonTextStyle)
-						.Text(FText::FromString("Cleanup"))
+						.Text(FText::FromString("Fix"))
 						.Justification(ETextJustify::Center)
 					]
 					]
+				
 
 			]
 				
@@ -99,9 +124,18 @@ TSharedRef<SDockTab> FOrganiserPluginModule::OnSpawnPluginTab(const FSpawnTabArg
 
 FReply FOrganiserPluginModule::OnCleanupButtonClicked()
 {
-	//UOrganiserPluginUtilities::RemoveAllAssetsRefFree();
-	//UOrganiserPluginUtilities::UnifyAssetsDuplicates();
 	UOrganiserPluginUtilities::MakeOrganizationDir();
+	return FReply::Handled();
+}
+
+FReply FOrganiserPluginModule::OnCreateFolderStructureClicked()
+{
+	TArray<FString> TopLevelFoldersNames;
+	TopLevelFoldersNames.Add("Art");
+	TopLevelFoldersNames.Add("Core");
+	TopLevelFoldersNames.Add("Maps");
+	TopLevelFoldersNames.Add("MaterialLibrary");
+	UOrganiserPluginUtilities::CreateContenctTopLevelStructure(TopLevelFoldersNames);
 	return FReply::Handled();
 }
 
